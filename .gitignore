@@ -1,1 +1,9 @@
+# Ambiente virtual
+venv/
+__pycache__/
+
+# Banco de dados local
+*.db
+
+# Arquivo de variáveis de ambiente
 .env

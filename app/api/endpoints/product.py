@@ -13,5 +13,5 @@ router = APIRouter()
     response_model=List[Product],
     dependencies=[Depends(deps.verify_api_key)]
 )
-def read_sellers(pool: SimpleConnectionPool = Depends(deps.get_database_pool)):
+def read_products(pool: SimpleConnectionPool = Depends(deps.get_database_pool)):
     return crud_product.get_all_products(pool)

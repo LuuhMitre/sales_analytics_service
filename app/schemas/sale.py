@@ -14,3 +14,7 @@ class Sale(BaseModel):
     activation_date: date
     product_id: int
     seller_id: int
+
+    # Enable ORM mode to allow compatibility with ORM models
+    class Config:
+        orm_mode = True

@@ -8,3 +8,7 @@ class Seller(BaseModel):
     name: str
     monthly_target: Decimal
     installation_target: Decimal
+
+    # Enable ORM mode to allow compatibility with ORM models
+    class Config:
+        orm_mode = True

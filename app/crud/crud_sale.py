@@ -6,7 +6,7 @@ from typing import List, Dict
 
 
 def get_all_sales(pool: SimpleConnectionPool) -> List[Dict]:
-    sql_query = 'SELECT sale_date, product, quantity, price FROM sales ORDER BY sale_date DESC;'
+    sql_query = 'SELECT * FROM sales ORDER BY activation_date DESC;'
 
     conn = None
 

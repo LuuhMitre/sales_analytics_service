@@ -6,7 +6,7 @@ from typing import List, Dict
 
 
 def get_all_products(pool: SimpleConnectionPool) -> List[Dict]:
-    sql_query = 'SELECT name FROM products ORDER BY name ASC;'
+    sql_query = 'SELECT * FROM products ORDER BY name ASC;'
 
     conn = None
 

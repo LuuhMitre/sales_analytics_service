@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.api.endpoints import sales
+from app.api.endpoints import sales, seller, product
 from app.db.database import get_db_pool, close_db_pool
 from fastapi.middleware.cors import CORSMiddleware
 import logging
@@ -36,7 +36,9 @@ app.add_middleware(
     allow_headers=["*"],  # Permite todos os cabeçalhos
 )
 
-app.include_router(sales.router, prefix='/kpi', tags=['KPIs'])
+app.include_router(sales.router, prefix='/kpi', tags=['Sales'])
+app.include_router(seller.router, prefix='/kpi', tags=['Sellers'])
+app.include_router(product.router, prefix='/kpi', tags=['Products'])
 
 
 @app.get('/', tags=['Root'])

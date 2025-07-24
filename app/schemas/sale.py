@@ -5,6 +5,7 @@ from decimal import Decimal
 
 # Schema for sales data
 class Sale(BaseModel):
+    id: int
     company: str
     monthly_fee: Decimal
     installation_fee: Decimal

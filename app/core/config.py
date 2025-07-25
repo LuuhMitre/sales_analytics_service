@@ -3,12 +3,8 @@ from pydantic_settings import BaseSettings
 
 # Settings class to manage application configuration
 class Settings(BaseSettings):
-    # Database configuration read from environment variables
-    DB_NAME: str
-    DB_USER: str
-    DB_PASSWORD: str
-    DB_SERVER: str
-    DB_PORT: str
+    # Database configuration    
+    DATABASE_URL: str
 
     # API configuration
     API_KEY: str

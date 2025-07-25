@@ -4,13 +4,7 @@ from app.core.config import settings
 import logging
 
 # Construct the database URL using the settings
-DATABASE_URL = (
-    f'dbname={settings.DB_NAME} '
-    f'user={settings.DB_USER} '
-    f'password={settings.DB_PASSWORD} '
-    f'host={settings.DB_SERVER} '
-    f'port={settings.DB_PORT}'
-)
+DATABASE_URL = settings.DATABASE_URL
 
 # Initialize the connection pool
 db_pool = None

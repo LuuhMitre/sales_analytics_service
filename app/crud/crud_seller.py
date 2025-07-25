@@ -5,4 +5,4 @@ from .base import fetch_all
 
 # Fetch all seller records from the database.
 def get_all_sellers(pool: SimpleConnectionPool) -> List[Dict]:
-    return fetch_all(pool, 'SELECT * FROM sellers ORDER BY name ASC;')
+    return fetch_all(pool, 'SELECT * FROM sellers ORDER BY id ASC;')

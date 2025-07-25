@@ -10,6 +10,7 @@ def fetch_all(pool: SimpleConnectionPool, sql_query: str) -> List[Dict]:
         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
             cursor.execute(sql_query)
             results = cursor.fetchall()
+            print(f'Dados vindos diretamente do banco de dados: {results}')
             return results
     finally:
         if conn:

@@ -17,4 +17,4 @@ class Sale(BaseModel):
 
     # Enable ORM mode to allow compatibility with ORM models
     class Config:
-        orm_mode = True
+        from_attributes = True

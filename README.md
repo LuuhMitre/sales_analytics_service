@@ -1,161 +1,94 @@
-# Sales Analytics Service
+# Sales Analytics API & BI Dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-blue.svg)
+![Power BI](https://img.shields.io/badge/Power%20BI-Desktop-yellow.svg)
 
-API robusta construída com FastAPI para servir como um backend para ferramentas de Business Intelligence, como o Power BI. O projeto demonstra a integração de uma API segura com um banco de dados PostgreSQL, utilizando SQL puro para consultas e Pydantic para validação de dados.
+## 📊 Visão Geral do Projeto
+
+Este projeto consiste em uma **API de alta performance** construída com FastAPI que serve como um backend robusto para um **dashboard de Business Intelligence em Power BI**. A solução simula um ambiente real de análise de vendas, onde o backend se conecta a um banco de dados PostgreSQL para extrair dados de vendas, produtos e vendedores, e os expõe de forma segura para consumo por ferramentas de BI.
+
+O resultado final é um pipeline de dados completo: do banco de dados relacional, passando por uma API segura e bem estruturada, até a visualização de KPIs e métricas de negócio em um dashboard interativo.
+
+###  Dashboards Finais
+
+<table>
+  <tr>
+    <td><img src="assets/visao_geral.png" alt="Dashboard Visão Geral"></td>
+    <td><img src="assets/sellers.png" alt="Dashboard Vendedores"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Dashboard de Visão Geral</em></td>
+    <td align="center"><em>Dashboard de Análise de Vendedores</em></td>
+  </tr>
+</table>
+
+
 
 ## ✨ Features
 
-* **API RESTful** com FastAPI, otimizada para alta performance.
-* **Conexão com PostgreSQL** utilizando a biblioteca `psycopg2` e SQL puro para total controle sobre as queries.
-* **Validação de Dados** na entrada e saída com Pydantic, garantindo a integridade dos dados.
-* **Autenticação Segura** baseada em API Key para proteger os endpoints.
-* **Documentação Automática e Interativa** gerada pelo FastAPI (via Swagger UI e ReDoc).
-* **Gerenciamento de Configuração** profissional com `pydantic-settings` para carregar variáveis de ambiente de um arquivo `.env`.
-* **Integração com Power BI** demonstrando um pipeline de dados completo, do banco à visualização.
+* **API RESTful** com FastAPI, seguindo as melhores práticas de estrutura de projetos.
+* **Banco de Dados PostgreSQL** como fonte da verdade para os dados de negócio.
+* **Consultas com SQL Puro** via `psycopg2`, demonstrando controle e otimização das queries.
+* **Validação de Dados** robusta com Pydantic para garantir a integridade dos schemas da API.
+* **Autenticação Segura** via API Key para proteger os endpoints contra acesso não autorizado.
+* **Documentação Automática** e interativa com Swagger UI (`/docs`).
+* **Código Refatorado e Limpo**, utilizando funções base para evitar repetição (princípio DRY).
+* **Pipeline de BI Completo**, com integração ponta-a-ponta com o Power BI para criação de um modelo de dados relacional e visuais dinâmicos.
 
 ## 🛠️ Tech Stack
 
 * **Backend:** FastAPI, Uvicorn, Gunicorn
 * **Banco de Dados:** PostgreSQL
-* **Validação:** Pydantic
 * **Driver do Banco:** Psycopg2
-* **BI Tool:** Power BI
-* **Gerenciamento de Configuração:** Pydantic-Settings
+* **Validação/Configuração:** Pydantic, Pydantic-Settings
+* **Visualização:** Power BI
+* **Cloud (Deploy):** Render.com
 
-## 📂 Estrutura do Projeto
+## 🚀 Como Executar Localmente
 
-A estrutura do projeto foi organizada para garantir a separação de responsabilidades e a escalabilidade.
+Siga os passos abaixo para configurar e rodar o projeto na sua máquina.
 
-```
-sales_analytics_service/
-│
-├── app/
-│   ├── api/
-│   │   ├── endpoints/
-│   │   │   └── sales.py
-│   │   └── deps.py
-│   ├── core/
-│   │   └── config.py
-│   ├── crud/
-│   │   └── crud_sale.py
-│   ├── db/
-│   │   └── database.py
-│   ├── schemas/
-│   │   └── venda.py
-│   └── main.py
-│
-├── database/
-│   └── schema.sql
-│
-├── .env.example
-├── .gitignore
-└── requirements.txt
-```
-
-## ⚙️ Configuração e Instalação
-
-Siga os passos abaixo para executar o projeto localmente.
+### Pré-requisitos
+* Python 3.10+
+* PostgreSQL
+* Power BI Desktop
 
 ### 1. Clonar o Repositório
-
 ```bash
-git clone [https://github.com/seu-usuario/sales_analytics_service.git](https://github.com/seu-usuario/sales_analytics_service.git)
-cd sales_analytics_service
+git clone [https://github.com/seu-usuario/sales-analytics-service.git](https://github.com/seu-usuario/sales-analytics-service.git)
+cd sales-analytics-service
 ```
 
-### 2. Criar e Ativar o Ambiente Virtual
-
+### 2. Ambiente Virtual e Dependências
 ```bash
-# Criar o ambiente
+# Crie e ative o ambiente virtual
 python -m venv venv
+.\venv\Scripts\activate
 
-# Ativar no Windows
-.venv\Scripts\activate
-
-# Ativar no Linux/macOS
-source venv/bin/activate
-```
-
-### 3. Instalar as Dependências
-
-Com o ambiente virtual ativado, instale todas as bibliotecas necessárias:
-
-```bash
+# Instale as bibliotecas
 pip install -r requirements.txt
 ```
 
-### 4. Configurar o Banco de Dados PostgreSQL
+### 3. Banco de Dados
+1. Crie um banco de dados no PostgreSQL (ex: `sales_analytics_api_db`).
+2. Execute o script `database/schema.sql` neste banco para criar as tabelas e inserir os dados de exemplo.
 
-1.  Certifique-se de que você tem o PostgreSQL instalado e rodando.
-2.  Crie um novo banco de dados. Por exemplo, `sales_analytics_service`.
-3.  Conecte-se a este banco de dados usando uma ferramenta como DBeaver ou pgAdmin e execute o script contido em `database/schema.sql` para criar a tabela `sales` e populá-la com dados de exemplo.
-
-### 5. Configurar as Variáveis de Ambiente
-
-Este projeto usa um arquivo `.env` para gerenciar segredos e configurações.
-
-1.  Crie uma cópia do arquivo `.env.example` e renomeie-a para `.env`.
-2.  Abra o arquivo `.env` e preencha com as suas credenciais do banco de dados e uma chave de API de sua escolha.
-
-**Conteúdo do `.env.example`:**
-
+### 4. Variáveis de Ambiente
+1. Crie uma cópia do arquivo `.env.example` (se houver) ou crie um novo arquivo chamado `.env` na raiz do projeto.
+2. Preencha o `.env` com suas credenciais:
 ```ini
-POSTGRES_USER=seu_usuario_postgres
-POSTGRES_PASSWORD=sua_senha_postgres
+POSTGRES_USER=seu_usuario
+POSTGRES_PASSWORD=sua_senha
 POSTGRES_SERVER=localhost
 POSTGRES_PORT=5432
-POSTGRES_DB=sales_analytics_service
-API_KEY="coloque_aqui_uma_chave_secreta_forte"
+POSTGRES_DB=sales_analytics_api_db
+API_KEY="uma_chave_secreta_bem_forte_aqui"
 ```
 
-## 🚀 Rodando a Aplicação
-
-Com tudo configurado, inicie o servidor FastAPI:
-
+### 5. Iniciar a API
 ```bash
 uvicorn app.main:app --reload
 ```
-
-A API estará disponível em `http://127.0.0.1:8000`.
-
-* **Endpoint Raiz:** `http://127.0.0.1:8000/`
-* **Documentação Interativa:** `http://127.0.0.1:8000/docs`
-
-## 🔌 Usando a API
-
-### Endpoint Principal
-
-* **URL:** `GET /kpi/sales`
-* **Descrição:** Retorna todos os dados de vendas.
-* **Autenticação:** Requer uma API Key no cabeçalho da requisição.
-
-### Autenticação
-
-Todas as requisições para o endpoint `/kpi/sales` devem incluir o cabeçalho `X-API-Key` com o valor que você definiu no seu arquivo `.env`.
-
-**Exemplo com cURL:**
-
-```bash
-curl -X 'GET' \
-  '[http://127.0.0.1:8000/kpi/sales](http://127.0.0.1:8000/kpi/sales)' \
-  -H 'accept: application/json' \
-  -H 'X-API-Key: seu_token_aqui'
-```
-
-## 📊 Integração com Power BI
-
-1.  No Power BI Desktop, vá em **Obter dados > Da Web**.
-2.  Selecione a opção **Avançado**.
-3.  Em "Partes da URL", insira `http://127.0.0.1:8000/kpi/sales`.
-4.  Em "Parâmetros de cabeçalho...", adicione:
-    * **Nome:** `X-API-Key`
-    * **Valor:** A sua chave de API
-5.  Clique em "OK". Na tela seguinte de credenciais, selecione **Anônimo**.
-6.  Trate os dados no Power Query e crie seus visuais.
-
-## Licença
-
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+A API estará rodando em `http://127.0.0.1:8000` e a documentação em `http://127.0.0.1:8000/docs`.

@@ -1,9 +1,12 @@
-# Ambiente virtual
+# Ignore virtual environment directories
 venv/
 __pycache__/
 
-# Banco de dados local
+# Local db
 *.db
 
-# Arquivo de variáveis de ambiente
+# Ambient variables file 
 .env
+
+# Power BI files
+*.pbix

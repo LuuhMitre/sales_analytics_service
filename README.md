@@ -23,9 +23,10 @@ O resultado final é um pipeline de dados completo: do banco de dados relacional
   <tr>
     <td align="center"><em>Dashboard de Análise de Vendedores</em></td>
   </tr>
-  <tr>  
+  <tr>
     <td><img src="assets/sellers.png" alt="Dashboard Vendedores"></td>
   </tr>
+
 </table>
 
 

@@ -15,12 +15,16 @@ O resultado final é um pipeline de dados completo: do banco de dados relacional
 
 <table>
   <tr>
-    <td><img src="assets/visao_geral.png" alt="Dashboard Visão Geral"></td>
-    <td><img src="assets/sellers.png" alt="Dashboard Vendedores"></td>
+    <td align="center"><em>Dashboard de Visão Geral</em></td>
   </tr>
   <tr>
-    <td align="center"><em>Dashboard de Visão Geral</em></td>
+    <td><img src="assets/visao_geral.png" alt="Dashboard Visão Geral"></td>
+  </tr>
+  <tr>
     <td align="center"><em>Dashboard de Análise de Vendedores</em></td>
+  </tr>
+  <tr>  
+    <td><img src="assets/sellers.png" alt="Dashboard Vendedores"></td>
   </tr>
 </table>
 
@@ -44,7 +48,7 @@ O resultado final é um pipeline de dados completo: do banco de dados relacional
 * **Driver do Banco:** Psycopg2
 * **Validação/Configuração:** Pydantic, Pydantic-Settings
 * **Visualização:** Power BI
-* **Cloud (Deploy):** Render.com
+* **Cloud (Deploy):** Railway.com
 
 ## 🚀 Como Executar Localmente
 
@@ -91,4 +95,10 @@ API_KEY="uma_chave_secreta_bem_forte_aqui"
 ```bash
 uvicorn app.main:app --reload
 ```
-A API estará rodando em `http://127.0.0.1:8000` e a documentação em `http://127.0.0.1:8000/docs`.
+A API estará rodando localmente em `http://127.0.0.1:8000` e a documentação em `http://127.0.0.1:8000/docs`.
+
+
+## 🔗 Links do Projeto Online
+
+* **Dashboard Interativo:** **[Clique aqui para acessar o relatório no Power BI](https://app.powerbi.com/view?r=eyJrIjoiZjk0ZTYyYTYtMDY5Yi00ZmRmLWJmOGQtZTU1NDljZWI3ZGVmIiwidCI6IjVkYTBkNjk2LWM1MDEtNGNlNS1iNmNjLWI5OWI5MmIzY2NjMCJ9)**
+* **Documentação da API:** **[Clique aqui para ver a documentação da API (Swagger UI)](https://salesanalyticsservice-production.up.railway.app/docs)**

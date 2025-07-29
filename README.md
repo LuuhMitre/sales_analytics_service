@@ -102,3 +102,20 @@ A API estará rodando localmente em `http://127.0.0.1:8000` e a documentação e
 
 * **Dashboard Interativo:** **[Clique aqui para acessar o relatório no Power BI](https://app.powerbi.com/view?r=eyJrIjoiZjk0ZTYyYTYtMDY5Yi00ZmRmLWJmOGQtZTU1NDljZWI3ZGVmIiwidCI6IjVkYTBkNjk2LWM1MDEtNGNlNS1iNmNjLWI5OWI5MmIzY2NjMCJ9)**
 * **Documentação da API:** **[Clique aqui para ver a documentação da API (Swagger UI)](https://salesanalyticsservice-production.up.railway.app/docs)**
+
+---
+
+
+
+Feito com 💜 por Luana Mitre!
+
+<p align="left">
+  <a href="https://www.linkedin.com/in/luana-mitre/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://github.com/LuuhMitre" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Link para o GitHub">
+  </a>
+  <a href="https://my-portfolio-jet-one-93.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfólio-%238A2BE2?style=for-the-badge&logoColor=white" alt="Link para o Portfólio">
+  </a>
+</p>
+

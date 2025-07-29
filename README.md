@@ -13,23 +13,11 @@ O resultado final é um pipeline de dados completo: do banco de dados relacional
 
 ###  Dashboards Finais
 
-<table>
-  <tr>
-    <td align="center"><em>Dashboard de Visão Geral</em></td>
-  </tr>
-  <tr>
-    <td><img src="assets/visao_geral.png" alt="Dashboard Visão Geral"></td>
-  </tr>
-  <tr>
-    <td align="center"><em>Dashboard de Análise de Vendedores</em></td>
-  </tr>
-  <tr>
-    <td><img src="assets/sellers.png" alt="Dashboard Vendedores"></td>
-  </tr>
+- Dashboard de Visão Geral
+<img src="assets/visao_geral.png" alt="Dashboard Visão Geral">
 
-</table>
-
-
+- Dashboard de Análise de Vendedores
+<img src="assets/sellers.png" alt="Dashboard Vendedores">
 
 ## ✨ Features
 
